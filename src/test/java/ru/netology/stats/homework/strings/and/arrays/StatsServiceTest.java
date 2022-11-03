@@ -1,4 +1,5 @@
 package ru.netology.stats.homework.strings.and.arrays;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +18,7 @@ public class StatsServiceTest {
     }
 
     @Test                                        // Тест 2
-    public void  shouldAveragePerMonth() {
+    public void shouldAveragePerMonth() {
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -29,7 +30,7 @@ public class StatsServiceTest {
     }
 
     @Test                                     // Тест 3
-    public void shouldMaxSalesPerMonth () {
+    public void shouldMaxSalesPerMonth() {
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -41,6 +42,19 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedMaxSales1, expectedMaxSales2, actualMaxSales);
     }
 
+    @Test
+    public void shouldMinSalesPerMonth() {         // Тест 4
+        StatsService service = new StatsService();
+
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expectedMinSales = 9;
+        int actualMinSales = service.minSales(sales);
+
+        Assertions.assertEquals(expectedMinSales, actualMinSales);
+
+
+    }
 
 
 }

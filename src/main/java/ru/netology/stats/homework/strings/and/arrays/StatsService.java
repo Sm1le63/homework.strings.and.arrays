@@ -24,8 +24,8 @@ public class StatsService {
         for (long sale : sales) {
             if (sale >= sales[maxMonth]) {
                 maxMonth = month;
-                month = month + 1;
             }
+            month = month + 1;
         }
         return maxMonth + 1;
     }

@@ -1,6 +1,7 @@
 package ru.netology.stats.homework.strings.and.arrays;
 
 public class StatsService {
+
     public int sumSales(long[] sales) {       // Метод 1 "Сумма всех продаж"
         int sum = 0;
         for (long sale : sales) {
@@ -44,13 +45,33 @@ public class StatsService {
         return minMonth + 1;
     }
 
+    public int belowAverage(long[] sales) {  // Метод 5 "Кол-во мес., в которых продажи ниже среднего"
+        int below = 0;
+        for (long sale : sales) {
+            if (sale < averagePerMonth(sales)) {
+                below = below + 1;
+            }
 
+        }
+        return below;
+    }
 
+    public int aboveAverage(long[] sales) {   // Метод 6 "Кол-во мес., в которых продажи выше среднего"
+        int above = 0;
+        for (long sale : sales) {
+            if (sale > averagePerMonth(sales)) {
+                above = above + 1;
+            }
 
-
-
-
+        }
+        return above;
+    }
 }
+
+
+
+
+
 
 
 

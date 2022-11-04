@@ -35,11 +35,11 @@ public class StatsServiceTest {
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedMaxSales1 = 6;
-        int expectedMaxSales2 = 8;
+
+        int expectedMaxSales = 8;
         int actualMaxSales = service.maxSalesPerMonth(sales);
 
-        Assertions.assertEquals(expectedMaxSales1, expectedMaxSales2, actualMaxSales);
+        Assertions.assertEquals(expectedMaxSales, actualMaxSales);
     }
 
     @Test
@@ -52,9 +52,34 @@ public class StatsServiceTest {
         int actualMinSales = service.minSales(sales);
 
         Assertions.assertEquals(expectedMinSales, actualMinSales);
+    }
+
+    @Test
+    public void shouldBelowAverage(){             // Тест 5
+        StatsService service = new StatsService();
+
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expectedBelowAverage = 5;
+        int actualBelowAverage = service.belowAverage(sales);
+
+        Assertions.assertEquals(expectedBelowAverage,actualBelowAverage);
+    }
+
+    @Test
+    public void shouldAboveAverage(){              // Тест 6
+        StatsService service = new StatsService();
+
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expectedAboveAverage = 5;
+        int actualAboveAverage = service.aboveAverage(sales);
+
+        Assertions.assertEquals(expectedAboveAverage,actualAboveAverage);
+
+
 
 
     }
-
 
 }

@@ -11,11 +11,9 @@ public class StatsService {
     }
 
     public int averagePerMonth(long[] sales) { // Метод 2 "Средняя сумма продаж в месяц"
-        int average = 0;
-        for (long sale : sales) {
-            average = (int) (sale + average);
-        }
-        return average / sales.length;
+        int average = sumSales(sales)/ sales.length;
+
+        return average;
     }
 
     public int maxSalesPerMonth(long[] sales) { // Метод 3  "Месяц с наибольшими продажами"
